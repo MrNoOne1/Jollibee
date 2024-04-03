@@ -1,0 +1,154 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background: url('./jb-desktop-bg.png');
+    color: #ffffff;
+}
+
+nav{
+    padding: 16px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #e4163d;
+}
+
+ul li{
+    display: inline-block;
+}
+
+nav img{
+    width: 48px;
+    height: 48px;
+}
+
+#left-side{
+    margin-left: 70px;
+}
+
+ul li{
+    margin-left: 20px;
+}
+
+#right-side{
+    margin-right: 70px;
+}
+
+main{
+    padding-left: 80px;
+}
+
+.button-wrapper button{
+    background: #f98002;
+    padding: 10px 20px;
+    border: none;
+    width: 300px;
+    border-radius: 50px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.button-wrapper{
+    width: 85%;
+    display: flex;
+    justify-content: end;
+}
+
+#second-best img{
+    width: 384px;
+    height: 240px;
+}
+
+#menu{
+    width: 91%;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+#info-img {
+    width: 500px;
+}
+
+#info-btn{
+    color: #e4163d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 5px solid #e4163d;
+    width: 500px;
+    border-radius: 50px;
+}
+
+footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #e4163d;
+    margin: 0 80px; 
+    padding: 20px; 
+}
+
+.nav-footer-wrapper li a{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.nav-footer-wrapper li a:hover{
+    color: #f98002;
+}
+
+.cta-footer{
+    margin-top: 50px;
+    padding-left: 20px;
+}
+
+#cta-wrapper{
+    display: flex;
+    justify-content: flex-start;
+}
+
+input[type="email"]{
+    background: transparent;
+    color: white;
+    margin-left: 20px;
+}
+
+.social-wrapper{
+    margin-left: 40px;
+}
+
+.cpy h6{
+    padding-top: 20px;
+}
+
+#images-wrapper{
+    margin-top: 20px;
+}
+
+.hero-main{
+    position:relative;
+}
+
+.button-wrapper{
+    position: absolute;
+    top: 450px;
+}
+
+#best-seller-one{
+    position:relative;
+}
+
+#select-one{
+    position: absolute;
+    left: 40px;
+}
