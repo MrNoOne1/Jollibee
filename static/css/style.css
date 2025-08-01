@@ -1,0 +1,185 @@
+/* Custom styles for PRC Exam Practice App */
+
+body {
+    background-color: #f8f9fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Profession Cards */
+.profession-card {
+    transition: all 0.3s ease;
+    border: 1px solid #dee2e6;
+}
+
+.profession-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+    border-color: #007bff;
+}
+
+.profession-icon {
+    padding: 1rem;
+    border-radius: 50%;
+    background-color: rgba(0, 123, 255, 0.1);
+    width: 80px;
+    height: 80px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Quiz Styles */
+.option-btn {
+    transition: all 0.3s ease;
+    padding: 1rem;
+    text-align: left;
+    border: 2px solid #dee2e6;
+    background-color: white;
+}
+
+.option-btn:hover {
+    border-color: #007bff;
+    background-color: #f8f9fa;
+    transform: translateY(-2px);
+}
+
+.option-btn.selected {
+    border-color: #007bff;
+    background-color: #e3f2fd;
+    color: #0056b3;
+}
+
+.option-btn.correct {
+    border-color: #28a745;
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.option-btn.incorrect {
+    border-color: #dc3545;
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.option-btn:disabled {
+    opacity: 0.8;
+    cursor: not-allowed;
+}
+
+/* Score Display */
+.score-display {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 1rem;
+    border-radius: 10px;
+    text-align: center;
+}
+
+/* Feedback Alerts */
+.alert.alert-success {
+    border-left: 4px solid #28a745;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+}
+
+.alert.alert-danger {
+    border-left: 4px solid #dc3545;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+
+/* Loading Animation */
+.spinner-border {
+    width: 3rem;
+    height: 3rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .score-display {
+        margin-top: 1rem;
+        text-align: center;
+    }
+    
+    .option-btn {
+        margin-bottom: 0.5rem;
+    }
+    
+    .profession-card {
+        margin-bottom: 1rem;
+    }
+}
+
+/* Navbar */
+.navbar-brand {
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+/* Footer */
+footer {
+    border-top: 1px solid #dee2e6;
+    margin-top: auto;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Question Container */
+#question-container {
+    min-height: 400px;
+}
+
+/* Custom Button Styles */
+.btn-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+/* Success and Error States */
+.text-success {
+    color: #28a745 !important;
+}
+
+.text-danger {
+    color: #dc3545 !important;
+}
+
+/* Card Enhancements */
+.card {
+    border-radius: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+
+/* Professional Icons Color Coding */
+.text-nursing { color: #e91e63; }
+.text-pharmacy { color: #4caf50; }
+.text-medicine { color: #f44336; }
+.text-dentistry { color: #2196f3; }
+.text-therapy { color: #ff9800; }
