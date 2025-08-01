@@ -1,0 +1,159 @@
+{% extends "base.html" %}
+
+{% block title %}{{ profession }} Practice Quiz - PRC Exam Practice{% endblock %}
+
+{% block content %}
+<div class="container py-4">
+    <!-- Quiz Header -->
+    <div class="row justify-content-center mb-4">
+        <div class="col-lg-8">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <div class="row align-items-center">
+                        <div class="col-md-6">
+                            <h2 class="mb-1">{{ profession }} Practice</h2>
+                            <p class="text-muted mb-0">PRC License Exam Preparation</p>
+                        </div>
+                        <div class="col-md-6 text-md-end">
+                            <div class="score-display">
+                                <h4 class="mb-0">
+                                    Score: <span id="current-score" class="text-primary">0</span> / 
+                                    <span id="total-questions" class="text-muted">0</span>
+                                </h4>
+                                <small class="text-muted">
+                                    Percentage: <span id="percentage">0%</span>
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quiz Container -->
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <!-- Loading State -->
+            <div id="loading-container" class="text-center py-5">
+                <div class="spinner-border text-primary" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+                <p class="mt-3 text-muted">Loading your first question...</p>
+            </div>
+
+            <!-- Question Container -->
+            <div id="question-container" class="card shadow-sm" style="display: none;">
+                <div class="card-body">
+                    <!-- Question Number -->
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <span class="badge bg-primary fs-6">Question <span id="question-number">1</span></span>
+                        <button id="new-question-btn" class="btn btn-outline-secondary btn-sm">
+                            <i class="fas fa-sync-alt me-2"></i>New Question
+                        </button>
+                    </div>
+
+                    <!-- Question Text -->
+                    <div class="question-section mb-4">
+                        <h5 id="question-text" class="mb-3"></h5>
+                    </div>
+
+                    <!-- Answer Options -->
+                    <div class="options-section">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <button class="btn btn-outline-dark w-100 text-start option-btn" data-option="A">
+                                    <strong>A.</strong> <span class="option-text"></span>
+                                </button>
+                            </div>
+                            <div class="col-md-6">
+                                <button class="btn btn-outline-dark w-100 text-start option-btn" data-option="B">
+                                    <strong>B.</strong> <span class="option-text"></span>
+                                </button>
+                            </div>
+                            <div class="col-md-6">
+                                <button class="btn btn-outline-dark w-100 text-start option-btn" data-option="C">
+                                    <strong>C.</strong> <span class="option-text"></span>
+                                </button>
+                            </div>
+                            <div class="col-md-6">
+                                <button class="btn btn-outline-dark w-100 text-start option-btn" data-option="D">
+                                    <strong>D.</strong> <span class="option-text"></span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Answer Feedback -->
+                    <div id="feedback-container" class="mt-4" style="display: none;">
+                        <div class="alert" id="feedback-alert">
+                            <div class="d-flex align-items-center">
+                                <div class="flex-grow-1">
+                                    <h6 class="alert-heading mb-2">
+                                        <i class="feedback-icon me-2"></i>
+                                        <span class="feedback-title"></span>
+                                    </h6>
+                                    <p class="mb-2">
+                                        <strong>Correct Answer:</strong> <span id="correct-answer"></span>
+                                    </p>
+                                    <p class="mb-0" id="explanation"></p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="text-center">
+                            <button id="next-question-btn" class="btn btn-primary btn-lg">
+                                Next Question <i class="fas fa-arrow-right ms-2"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- No Questions Available -->
+            <div id="no-questions-container" class="card shadow-sm text-center" style="display: none;">
+                <div class="card-body py-5">
+                    <i class="fas fa-exclamation-triangle fa-3x text-warning mb-3"></i>
+                    <h4>No Questions Available</h4>
+                    <p class="text-muted mb-4">
+                        We don't have practice questions for {{ profession }} yet. 
+                        We're working on adding more content!
+                    </p>
+                    <a href="{{ url_for('home') }}" class="btn btn-primary">
+                        <i class="fas fa-arrow-left me-2"></i>Choose Another Profession
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tips Section -->
+    <div class="row justify-content-center mt-5">
+        <div class="col-lg-8">
+            <div class="card bg-light border-0">
+                <div class="card-body">
+                    <h6 class="card-title">
+                        <i class="fas fa-lightbulb text-warning me-2"></i>
+                        Study Tips
+                    </h6>
+                    <ul class="mb-0 small text-muted">
+                        <li>Read each question carefully before selecting an answer</li>
+                        <li>Pay attention to the explanations - they help you learn</li>
+                        <li>Practice regularly to improve your scores</li>
+                        <li>Review the topics you struggle with most</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Hidden data for JavaScript -->
+<script type="text/javascript">
+    const PROFESSION_ID = {{ profession_id }};
+</script>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/quiz.js') }}"></script>
+{% endblock %}
